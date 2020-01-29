@@ -27,17 +27,17 @@ $boodschappen = ["aardappelen", "aardbeien", "3 pakken melk", "yoghurt"];
 }   
 
 function addItem() {
-  var textInput = document.getElementById("item");  //getting text input
-  var text = textInput.value;   //getting value of text input element
-  var ul = document.getElementById("ul");  //getting element <ul> to add element to
-  var li = document.createElement("li");  //creating li element to add
-  li.innerHTML = text;    //inserting text into newly created <li> element
+  var textInput = document.getElementById("item");  
+  var text = textInput.value;   
+  var ul = document.getElementById("ul"); 
+  var li = document.createElement("li");  
+  li.innerHTML = text;    
   li.onclick = function() {
     this.parentNode.removeChild(this);
-    // or this.remove(); if supported
+    
   }
-  if (ul.childElementCount == 0) {  //using if/else statement to add items to top of list
-    ul.appendChild(li); // will add if count of ul children is 0 otherwise add before first item
+  if (ul.childElementCount == 0) { 
+    ul.appendChild(li); 
   }
   else {
     ul.insertBefore(li, ul.firstChild);
@@ -45,12 +45,12 @@ function addItem() {
 }
 
    function show(){
-      document.getElementById('close').style.display = ''; //shows the X button when text is entered;
+      document.getElementById('close').style.display = ''; 
    }
 
    function clean(){
-      document.getElementById('close').style.display = 'none'; //hides the X button
-      document.getElementById('text').value = ""; //clears the field
+      document.getElementById('close').style.display = 'none'; 
+      document.getElementById('text').value = "";
    }
 
 $(document).ready(function(){
